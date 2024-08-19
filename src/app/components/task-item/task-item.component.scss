@@ -1,0 +1,49 @@
+#buttonOptions {
+    .p-button {
+        width: 35px;
+        height: 35px;
+        background-color: var(--cor4);
+        color: rgb(255, 255, 255);
+    }
+
+    .p-button:hover {
+        background-color: var(--cor1);
+        color: var(--cor2);
+    }
+
+}
+
+#buttonConfirm {
+    .p-button {
+        width: 35px;
+        height: 35px;
+        background-color: #78bdb8;
+        color: rgb(255, 255, 255);
+    }
+
+    .p-button:hover {
+        background-color: var(--cor1);
+        color: var(--cor2);
+    }
+
+}
+
+#buttonCancel {
+    .p-button {
+        width: 35px;
+        height: 35px;
+        background-color: var(--cor9);
+        color: var(--cor2);
+    }
+
+    .p-button:hover {
+        background-color: var(--cor10);
+        color: var(--cor2);
+    }
+
+}
+
+.p-disabled,
+.p-component:disabled {
+    opacity: 1;
+}

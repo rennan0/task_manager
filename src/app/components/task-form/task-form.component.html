@@ -1,0 +1,45 @@
+<p-toast position="bottom-center" key="bc"></p-toast>
+<p-toast position="top-right" key="tr"></p-toast>
+
+<div class=" container">
+
+
+    <div class="flex align-items-center justify-content-center flex-column p-7 ">
+        <div class="flex align-items-center justify-content-center pb-4 titulo">
+            <label>O que irei fazer hoje?</label>
+        </div>
+
+        <div class="flex align-items-center justify-content-center ">
+            <div class="shadow-4">
+                <p-card class="flex align-items-center justify-content-center">
+                    <div class="formgrid grid">
+                        <div class="field col-12 md:col-5">
+                            <div class="field col">
+                                <label class="infoTask">Titulo</label>
+                                <input type="text" pInputText [(ngModel)]="title"
+                                    class="text-base text-color surface-overlay p-2 surface-border border-round w-full" />
+                            </div>
+                        </div>
+                        <div class="field col-12 md:col-5">
+                            <div class="field col">
+                                <label class="infoTask">Descrição</label>
+                                <input type="text" pInputText [(ngModel)]="description"
+                                    class="text-base text-color surface-overlay p-2 surface-border border-round w-full" />
+                            </div>
+                        </div>
+                        <div class="field col-12 lg:pt-4 md:col-2 md:pt-4">
+                            <div class="field col">
+                                <p-button id="taskButton" icon="pi pi-plus" label="Tarefa" (click)="addTask()" />
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <app-task-list [tasks]="tasks" (deleteTask)="onDeleteTask($event)"
+                        (finishTask)="onFinishTask($event)" (updateTask)="onUpdateTask($event)"></app-task-list>
+
+                </p-card>
+            </div>
+        </div>
+    </div>
+</div>

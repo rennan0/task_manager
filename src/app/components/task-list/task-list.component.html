@@ -1,0 +1,6 @@
+<div *ngFor="let task of tasks">
+    <p-divider type="solid" />
+    <app-task-item [task]="task" (deleteTask)="onDeleteTask($event)" (finishTask)="onFinishTask($event)"
+        (updateTask)="onUpdateTask($event)">>
+    </app-task-item>
+</div>

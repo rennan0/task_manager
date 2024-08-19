@@ -1,0 +1,50 @@
+<div class="formgrid grid">
+    <div class="field col-12 md:col-5">
+        <div class="field col">
+            <input type="text" pInputText [(ngModel)]="task.title" [disabled]="disableInput"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round w-full" />
+        </div>
+    </div>
+
+
+    <div class="field col-12 md:col-5">
+        <div class="field col">
+            <input type="text" pInputText [(ngModel)]="task.description" [disabled]="disableInput"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round w-full" />
+        </div>
+    </div>
+
+    <div class="field col-12 md:col-2">
+        <div class="field col">
+            <div class="flex align-items-center justify-content-center">
+                <div *ngIf="disableInput" class="flex align-items-center justify-content-between gap-2 ">
+                    <!-- TASK PENDENTE -->
+                    <img src="./assets/bolinhaLaranja.svg" class="pl-1" *ngIf="!task.completed" />
+
+                    <p-button id="buttonOptions" icon="pi pi-pencil" [rounded]="true"
+                        (click)="changeEditionStatus(); startEditTask(task)" *ngIf="!task.completed" />
+
+                    <!-- TASK CONCLUIDA -->
+                    <img src="./assets/bolinhaVerde.svg" *ngIf="task.completed" class="pl-1" />
+
+                    <p-button id="buttonOptions" icon="pi pi-trash" [rounded]="true" (click)="onDeleteTask(task)" />
+
+                    <p-button id="buttonOptions" icon="pi pi-check-square" [rounded]="true" (click)="onFinishTask(task)"
+                        *ngIf="!task.completed" />
+
+                    <p-button id="buttonOptions" icon="pi pi-times" [rounded]="true" (click)="onFinishTask(task)"
+                        *ngIf="task.completed" />
+                </div>
+            </div>
+
+            <div *ngIf="!disableInput" class="flex align-items-center justify-content-between">
+                <p-button id="buttonConfirm" icon="pi pi-check" [rounded]="true" severity="success"
+                    (click)="onUpdateTask(task)" />
+
+                <p-button id="buttonCancel" icon="pi pi-times" [rounded]="true" severity="danger"
+                    (click)="changeEditionStatus(); resetTask(task)" />
+            </div>
+
+        </div>
+    </div>
+</div>
