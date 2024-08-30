@@ -25,27 +25,25 @@ import { MessagesModule } from 'primeng/messages';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TaskListComponent,
-    TaskItemComponent,
-    TaskFormComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    ButtonModule,
-    InputTextModule,
-    TableModule,
-    CardModule,
-    DividerModule,
-    ToastModule,
-    MessagesModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        ButtonModule,
+        InputTextModule,
+        TableModule,
+        CardModule,
+        DividerModule,
+        ToastModule,
+        MessagesModule,
+        TaskListComponent,
+        TaskItemComponent,
+        TaskFormComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
