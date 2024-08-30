@@ -15,8 +15,7 @@ export class TaskListComponent implements OnInit {
 
   constructor(public taskService: TaskService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   onUpdateTask(task: Task) {
     this.updateTask.emit(task);
