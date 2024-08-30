@@ -59,7 +59,6 @@ export class TaskFormComponent implements OnInit {
     this.taskService.updateTask(task);
     this.listTasks();
     this.showSuccess("Atenção", "Tarefa atualizada.");
-
   }
 
   clearForm() {
