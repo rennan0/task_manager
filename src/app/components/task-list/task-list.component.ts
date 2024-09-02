@@ -1,11 +1,16 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Task } from '../../models/task';
 import { TaskService } from '../../services/task.service';
+import { NgFor } from '@angular/common';
+import { DividerModule } from 'primeng/divider';
+import { TaskItemComponent } from '../task-item/task-item.component';
 
 @Component({
-  selector: 'app-task-list',
-  templateUrl: './task-list.component.html',
-  styleUrls: ['./task-list.component.scss']
+    selector: 'app-task-list',
+    templateUrl: './task-list.component.html',
+    styleUrls: ['./task-list.component.scss'],
+    standalone: true,
+    imports: [NgFor, DividerModule, TaskItemComponent]
 })
 export class TaskListComponent implements OnInit {
   @Input() tasks!: Task[];
@@ -15,7 +20,11 @@ export class TaskListComponent implements OnInit {
 
   constructor(public taskService: TaskService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+
+
+
+    
   }
 
   onUpdateTask(task: Task) {

@@ -1,13 +1,18 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { Task } from '../../models/task';
 import { TaskService } from '../../services/task.service';
+import { FormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
+import { NgIf } from '@angular/common';
+import { Button } from 'primeng/button';
 
 @Component({
-  selector: 'app-task-item',
-  templateUrl: './task-item.component.html',
-  styleUrls: ['./task-item.component.scss'],
-
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-task-item',
+    templateUrl: './task-item.component.html',
+    styleUrls: ['./task-item.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [FormsModule, InputTextModule, NgIf, Button]
 })
 export class TaskItemComponent implements OnInit {
 

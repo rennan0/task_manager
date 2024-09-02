@@ -2,14 +2,22 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { TaskService } from '../../services/task.service';
 import { Task } from '../../models/task';
+import { ToastModule } from 'primeng/toast';
+import { CardModule } from 'primeng/card';
+import { FormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
+import { Button } from 'primeng/button';
+import { TaskListComponent } from '../task-list/task-list.component';
 
 
 @Component({
-  selector: 'app-task-form',
-  templateUrl: './task-form.component.html',
-  styleUrls: ['./task-form.component.scss'],
-  providers: [MessageService],
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-task-form',
+    templateUrl: './task-form.component.html',
+    styleUrls: ['./task-form.component.scss'],
+    providers: [MessageService],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [ToastModule, CardModule, FormsModule, InputTextModule, Button, TaskListComponent]
 })
 export class TaskFormComponent implements OnInit {
 
@@ -59,7 +67,6 @@ export class TaskFormComponent implements OnInit {
     this.taskService.updateTask(task);
     this.listTasks();
     this.showSuccess("Atenção", "Tarefa atualizada.");
-
   }
 
   clearForm() {
